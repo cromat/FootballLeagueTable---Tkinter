@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface>
+  <object class="tk.Frame" id="main">
+    <property name="height">50</property>
+    <property name="width">100</property>
+    <layout>
+      <property name="column">0</property>
+      <property name="propagate">True</property>
+      <property name="row">0</property>
+    </layout>
+    <child>
+      <object class="tk.Text" id="text">
+        <property name="cursor">arrow</property>
+        <property name="exportselection">false</property>
+        <property name="height">15</property>
+        <property name="text" translatable="yes">Enter results here in format:
+Team1 - Team2	X : X</property>
+        <property name="width">70</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="columnspan">1</property>
+          <property name="padx">5</property>
+          <property name="pady">5</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="rowspan">1</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Treeview" id="table">
+        <property name="height">17</property>
+        <property name="selectmode">extended</property>
+        <property name="show">headings</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="pady">20</property>
+          <property name="propagate">True</property>
+          <property name="row">2</property>
+        </layout>
+        <child>
+          <object class="ttk.Treeview.Column" id="col_rnk">
+            <property name="column_anchor">w</property>
+            <property name="heading_anchor">w</property>
+            <property name="minwidth">1</property>
+            <property name="stretch">false</property>
+            <property name="text" translatable="yes">Ranking</property>
+            <property name="tree_column">false</property>
+            <property name="visible">true</property>
+            <property name="width">50</property>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Treeview.Column" id="col_name">
+            <property name="column_anchor">w</property>
+            <property name="heading_anchor">w</property>
+            <property name="minwidth">10</property>
+            <property name="stretch">true</property>
+            <property name="text" translatable="yes">Name</property>
+            <property name="tree_column">false</property>
+            <property name="visible">true</property>
+            <property name="width">50</property>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Treeview.Column" id="col_played">
+            <property name="column_anchor">w</property>
+            <property name="heading_anchor">w</property>
+            <property name="minwidth">10</property>
+            <property name="stretch">true</property>
+            <property name="text" translatable="yes">Played</property>
+            <property name="tree_column">false</property>
+            <property name="visible">true</property>
+            <property name="width">50</property>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Treeview.Column" id="col_won">
+            <property name="column_anchor">w</property>
+            <property name="heading_anchor">w</property>
+            <property name="minwidth">10</property>
+            <property name="stretch">true</property>
+            <property name="text" translatable="yes">Won</property>
+            <property name="tree_column">false</property>
+            <property name="visible">true</property>
+            <property name="width">50</property>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Treeview.Column" id="col_draw">
+            <property name="column_anchor">w</property>
+            <property name="heading_anchor">w</property>
+            <property name="minwidth">10</property>
+            <property name="stretch">true</property>
+            <property name="text" translatable="yes">Draw</property>
+            <property name="tree_column">false</property>
+            <property name="visible">true</property>
+            <property name="width">50</property>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Treeview.Column" id="col_lost">
+            <property name="column_anchor">w</property>
+            <property name="heading_anchor">w</property>
+            <property name="minwidth">20</property>
+            <property name="stretch">true</property>
+            <property name="text" translatable="yes">Lost</property>
+            <property name="tree_column">false</property>
+            <property name="visible">true</property>
+            <property name="width">50</property>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Treeview.Column" id="col_goals">
+            <property name="column_anchor">w</property>
+            <property name="heading_anchor">w</property>
+            <property name="minwidth">20</property>
+            <property name="stretch">true</property>
+            <property name="text" translatable="yes">Goals</property>
+            <property name="tree_column">false</property>
+            <property name="visible">true</property>
+            <property name="width">50</property>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Treeview.Column" id="col_diff">
+            <property name="column_anchor">w</property>
+            <property name="heading_anchor">w</property>
+            <property name="minwidth">20</property>
+            <property name="stretch">true</property>
+            <property name="text" translatable="yes">Goal Diff.</property>
+            <property name="tree_column">false</property>
+            <property name="visible">true</property>
+            <property name="width">50</property>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Treeview.Column" id="col_pts">
+            <property name="column_anchor">w</property>
+            <property name="heading_anchor">w</property>
+            <property name="minwidth">20</property>
+            <property name="stretch">true</property>
+            <property name="text" translatable="yes">Points</property>
+            <property name="tree_column">false</property>
+            <property name="visible">true</property>
+            <property name="width">50</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="calc">
+        <property name="command">on_calculate</property>
+        <property name="text" translatable="yes">Calculate</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">1</property>
+        </layout>
+      </object>
+    </child>
+  </object>
+</interface>

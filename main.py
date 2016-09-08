@@ -1,35 +1,39 @@
-from tkinter import *
-from table import SimpleTable as Table
+import tkinter as tk
+import pygubu
 
-def init_col_names(tbl):
-    rk = Label(tbl, text="Ranking")
-    rk.pack()
 
-    nm = Label(tbl, text="Name")
-    nm.pack()
+class Application:
+    def __init__(self, master):
 
-def textfield_parse(text):
-    for line in text:
-        label.config(text=line)
+        self.master = master
 
-def calculate():
-    matches = textfield_parse(text=t.get("1.0", END))
+        #1: Create a builder
+        self.builder = builder = pygubu.Builder()
 
-root = Tk()
+        #2: Load an ui file
+        builder.add_from_file('bla.ui')
 
-label = Label(root, text="Football League Table")
-label.grid(row=0)
-label.pack()
+        #3: Create the widget using a master as parent
+        self.mainwindow = builder.get_object('main', master)
 
-t = Text(root)
-t.pack()
+        callbacks = {
+            'on_calculate': self.on_calculate,
+        }
 
-calcBtn = Button(text="Calculate", command=calculate)
-calcBtn.pack()
+        builder.connect_callbacks(self)
 
-tbl = Table(root, 14, 9)
-tbl.pack()
 
-#init_col_names(tbl)
+        # self.btn_calc = builder.get_object('calc')
 
-root.mainloop()
+    def on_calculate(self):
+        text = self.builder.get_object('text', self.master).get("1.0", tk.END)
+        print(text)
+
+
+
+
+
+if __name__ == '__main__':
+    root = tk.Tk()
+    app = Application(root)
+    root.mainloop()
