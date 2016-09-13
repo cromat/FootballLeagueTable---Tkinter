@@ -159,5 +159,17 @@ Team1 - Team2	X : X</property>
         </layout>
       </object>
     </child>
+    <child>
+      <object class="ttk.Button" id="open_btn">
+        <property name="command">on_open</property>
+        <property name="text" translatable="yes">Open</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="pady">20</property>
+          <property name="propagate">True</property>
+          <property name="row">3</property>
+        </layout>
+      </object>
+    </child>
   </object>
 </interface>
