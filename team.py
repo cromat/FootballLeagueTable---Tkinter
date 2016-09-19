@@ -1,3 +1,5 @@
+import json
+
 class Team:
     def __init__(self, ranking, name, played=0, won=0, draw=0, lost=0, gscored=0, gconceded=0, gdiff=0, points=0):
         self.ranking = ranking
@@ -22,3 +24,7 @@ class Team:
                str(self.played) + "\ndraw: " + str(self.draw) + "\nlost: " + str(self.lost) + "\ngscored: " + \
                str(self.gscored) + "\ngconceded: " + str(self.gconceded) + "\ngdiff: " + str(self.gdiff) + "\npoints: " \
                + str(self.points) + "\n"
+
+    def to_JSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__,
+                          sort_keys=True)

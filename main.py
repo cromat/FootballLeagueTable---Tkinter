@@ -21,6 +21,7 @@ class Application:
             tm = team.Team(1, name)
             self.teams[name] = tm
 
+
         #1: Create a builder
         self.builder = builder = pygubu.Builder()
 
@@ -53,6 +54,7 @@ class Application:
         guest = ''
         ghome = ''
         gguest = ''
+        data = {}
 
         for line in text:
             if playing.match(line):
@@ -60,12 +62,20 @@ class Application:
             elif result.match(line):
                 ghome, gguest = line.split(' : ')
                 self.teams = Match(home, guest, ghome, gguest, self.teams).play()
-                print(self.teams[home])
-                print(self.teams[guest])
+                # print(self.teams[home].to_JSON())
+                # print(self.teams[guest].to_JSON())
+                data[self.teams[home].name] = self.teams[home].to_JSON()
+                data[self.teams[guest].name] = self.teams[guest].to_JSON()
+        print(str(data).replace('\'', '\"').replace('\"{', '{').replace('}\"', '}'))
 
-                with open('data.txt', 'a') as outfile:
-                    json.dump(self.teams[home].__dict__, outfile)
-                    json.dump(self.teams[guest].__dict__, outfile)
+        f = open('data.json', 'w')
+        f.write(str(data).replace('\'', '\"').replace('\"{', '{').replace('}\"', '}'))
+        f.close()
+
+        with open('data.json') as data_file:
+            bam = json.load(data_file)
+
+        print(bam['Zeleni Brijeg'])
 
     def on_open(self):
         return

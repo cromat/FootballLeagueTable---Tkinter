@@ -160,15 +160,52 @@ Team1 - Team2	X : X</property>
       </object>
     </child>
     <child>
-      <object class="ttk.Button" id="open_btn">
-        <property name="command">on_open</property>
-        <property name="text" translatable="yes">Open</property>
+      <object class="ttk.Frame" id="frame_buttons">
+        <property name="height">200</property>
+        <property name="width">200</property>
         <layout>
           <property name="column">0</property>
-          <property name="pady">20</property>
           <property name="propagate">True</property>
           <property name="row">3</property>
         </layout>
+        <child>
+          <object class="ttk.Button" id="open_btn">
+            <property name="command">on_open</property>
+            <property name="text" translatable="yes">Open</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="padx">5</property>
+              <property name="pady">5</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="save_btn">
+            <property name="command">on_save</property>
+            <property name="text" translatable="yes">Save</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="padx">5</property>
+              <property name="pady">5</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="Button_3">
+            <property name="text" translatable="yes">Button_3</property>
+            <layout>
+              <property name="column">2</property>
+              <property name="padx">5</property>
+              <property name="pady">5</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
       </object>
     </child>
   </object>
