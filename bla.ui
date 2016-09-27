@@ -12,7 +12,7 @@
       <object class="tk.Text" id="text">
         <property name="cursor">arrow</property>
         <property name="exportselection">false</property>
-        <property name="height">15</property>
+        <property name="height">12</property>
         <property name="text" translatable="yes">Enter results here in format:
 Team1 - Team2	X : X</property>
         <property name="width">70</property>
@@ -29,7 +29,7 @@ Team1 - Team2	X : X</property>
     </child>
     <child>
       <object class="ttk.Treeview" id="table">
-        <property name="height">17</property>
+        <property name="height">15</property>
         <property name="selectmode">extended</property>
         <property name="show">headings</property>
         <layout>
@@ -195,8 +195,9 @@ Team1 - Team2	X : X</property>
           </object>
         </child>
         <child>
-          <object class="ttk.Button" id="Button_3">
-            <property name="text" translatable="yes">Button_3</property>
+          <object class="ttk.Button" id="add_teams_dialog_btn">
+            <property name="command">show_dialog</property>
+            <property name="text" translatable="yes">Add Teams</property>
             <layout>
               <property name="column">2</property>
               <property name="padx">5</property>
@@ -206,6 +207,36 @@ Team1 - Team2	X : X</property>
             </layout>
           </object>
         </child>
+      </object>
+    </child>
+  </object>
+  <object class="pygubu.builder.widgets.dialog" id="dialog_add_teams">
+    <property name="height">200</property>
+    <property name="modal">false</property>
+    <property name="padx">10</property>
+    <property name="pady">10</property>
+    <property name="width">400</property>
+    <child>
+      <object class="tk.Text" id="add_teams_txt">
+        <property name="height">10</property>
+        <property name="text" translatable="yes">Example: Team1, Team2, Team3</property>
+        <property name="width">50</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="add_teams_btn">
+        <property name="text" translatable="yes">Add Teams</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="pady">10</property>
+          <property name="propagate">True</property>
+          <property name="row">1</property>
+        </layout>
       </object>
     </child>
   </object>
