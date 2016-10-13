@@ -4,8 +4,7 @@
 import json
 
 class Team:
-    def __init__(self, ranking, name, played=0, won=0, draw=0, lost=0, gscored=0, gconceded=0, gdiff=0, points=0):
-        self.ranking = ranking
+    def __init__(self, name, played=0, won=0, draw=0, lost=0, gscored=0, gconceded=0, gdiff=0, points=0):
         self.name = name
         self.won = won
         self.played = played
@@ -17,13 +16,13 @@ class Team:
         self.points = points
 
     def __str__(self):
-        return "ranking: " + str(self.ranking) + "\nname: " + self.name.encode('cp1250', 'ignore').decode('cp1250', 'ignore') + "\nwon: " + str(self.won) + "\nplayed: " + \
+        return "name: " + self.name.encode('cp1250', 'ignore').decode('cp1250', 'ignore') + "\nwon: " + str(self.won) + "\nplayed: " + \
                str(self.played) + "\ndraw: " + str(self.draw) + "\nlost: " + str(self.lost) + "\ngscored: " + \
                str(self.gscored) + "\ngconceded: " + str(self.gconceded) + "\ngdiff: " + str(self.gdiff) + "\npoints: " \
                + str(self.points) + "\n"
 
     def __repr__(self):
-        return "ranking: " + str(self.ranking) + "\nname: " + self.name.encode('cp1250', 'ignore').decode('cp1250', 'ignore') + "\nwon: " + str(self.won) + "\nplayed: " + \
+        return "name: " + self.name.encode('cp1250', 'ignore').decode('cp1250', 'ignore') + "\nwon: " + str(self.won) + "\nplayed: " + \
                str(self.played) + "\ndraw: " + str(self.draw) + "\nlost: " + str(self.lost) + "\ngscored: " + \
                str(self.gscored) + "\ngconceded: " + str(self.gconceded) + "\ngdiff: " + str(self.gdiff) + "\npoints: " \
                + str(self.points) + "\n"

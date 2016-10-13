@@ -219,7 +219,7 @@ Team1 - Team2	X : X</property>
     <child>
       <object class="tk.Text" id="add_teams_txt">
         <property name="height">10</property>
-        <property name="text" translatable="yes">Example: Team1, Team2, Team3</property>
+        <property name="insertontime">0</property>
         <property name="width">50</property>
         <layout>
           <property name="column">0</property>
@@ -230,12 +230,25 @@ Team1 - Team2	X : X</property>
     </child>
     <child>
       <object class="ttk.Button" id="add_teams_btn">
-        <property name="text" translatable="yes">Add Teams</property>
+        <property name="command">on_add_teams</property>
+        <property name="text" translatable="yes">Add New Teams</property>
         <layout>
           <property name="column">0</property>
           <property name="pady">10</property>
           <property name="propagate">True</property>
           <property name="row">1</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="append_teams_btn">
+        <property name="command">on_append</property>
+        <property name="takefocus">false</property>
+        <property name="text" translatable="yes">Append Teams</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">2</property>
         </layout>
       </object>
     </child>
